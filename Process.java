@@ -1,8 +1,11 @@
-public class Process {
+public class Process  {
     private int id;
     private int timeReqd;
     private int priority;
     private int timeArrival;
+
+    public Process(){
+    }
 
     public Process(int id, int timeReqd, int priority, int timeArrival) {
         this.id = id;
@@ -41,5 +44,9 @@ public class Process {
 
     public void setTimeArrival(int timeArrival) {
         this.timeArrival = timeArrival;
+    }
+
+    public  int compareTo(Process p){
+        return 0;
     }
 }
