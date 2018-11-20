@@ -1,10 +1,10 @@
 import java.util.ArrayList;
 
-public class Heap<T extends Comparable<T>> {
-    ArrayList<T> heapList;
+public class Heap<Process> yes{
+    private ArrayList<Process> heapList;
 
     public Heap() {
-        heapList = new ArrayList<T>();
+        heapList = new ArrayList<Process>();
     }
 
     public int size() {
@@ -23,12 +23,12 @@ public class Heap<T extends Comparable<T>> {
         System.out.println(heapList);
     }
 
-    public void add(T item) {
+    public void add(Process item) {
         heapList.add(item);
 
         int index = heapList.size() - 1;
         int pindex = (index - 1) / 2;
-        T parent = heapList.get(pindex);
+        Process parent = heapList.get(pindex);
 
         while (index > 0 && item.compareTo(parent) > 0) {
             heapList.set(index, parent);
@@ -39,21 +39,21 @@ public class Heap<T extends Comparable<T>> {
         }
     }
 
-    public T deleteMax() {
+    public Process deleteMax() {
         if (isEmpty()) {
             System.out.println("Heap is empty");
             return null;
         } else {
-            T ret = heapList.get(0);    //get the item in the root. This is the largest item.
+            Process ret = heapList.get(0);    //get the item in the root. This is the largest item.
 
-            T item = heapList.remove(heapList.size() - 1);    //remove the last item.
+            Process item = heapList.remove(heapList.size() - 1);    //remove the last item.
 
             if (heapList.size() == 0)
                 return ret;                        //if there was only one item in the heap to begin with, we are done.
 
             heapList.set(0, item);            //otherwise, proceed. Put the item in the root.
             int index, lIndex, rIndex, maxIndex;
-            T maxChild;
+            Process maxChild;
             boolean found = false;
             index = 0;
             lIndex = index * 2 + 1;
